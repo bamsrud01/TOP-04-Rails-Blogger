@@ -2,6 +2,8 @@
 
 ## Description
 
+This is a blog application built using Ruby on Rails following a tutorial from Jumpstart Lab.
+
 ## Author
 
 - Barrett Amsrud
