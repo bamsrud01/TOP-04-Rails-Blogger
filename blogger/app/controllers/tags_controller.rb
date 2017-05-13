@@ -1,16 +1,21 @@
 class TagsController < ApplicationController
+
+  before_filter :require_login, only: [:destroy]
+
   def show
     @tag = Tag.find(params[:id])
   end
+
   def index
     @tags = Tag.all
   end
+
   def destroy
-		@tag = Tag.find(params[:id])
-		@tag.destroy
+    @tag = Tag.find(params[:id]).destroy
 
-		flash.notice = "Tag category '#{@tag.name}' has been deleted"
+    flash.notice = "The tag #{@tag.name} has been deleted."
 
-		redirect_to action: 'index'
-	end
+    redirect_to tags_path
+  end
+
 end
